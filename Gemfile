@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
-
+gem 'yahoo-finance'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -1,24 +1,9 @@
-<%= form_for(portfolio) do |f| %>
-  <% if portfolio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
-
-      <ul>
-      <% portfolio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @portfolio do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :amount %>
-    <%= f.text_field :amount %>
   </div>
 
   <div class="actions">

@@ -1,0 +1,7 @@
+<% if @position.errors.any? %>
+  $('#position-errors').html("<%= j(render partial: 'positions/position_error_messages') %>")
+<% else %>
+  $("#positions").append("<%= escape_javascript(render @position) %>");
+  $('#position_quantity').val('');
+  $('#position_ticker').val('');
+<% end %>

@@ -1,5 +1,9 @@
-<%= form_for [@portfolio, @position] do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<%= form_for [@portfolio, @position], remote: true do |f| %>
+  <div id = "position-errors">
+    <% if @position.errors.any? %>
+      <%= render partial: 'positions/position_error_messages' %>
+    <% end %>
+  </div>
 
   <div class="field">
     <%= f.label :ticker %>
@@ -9,5 +13,9 @@
   <div class = "field">
     <%= f.label :quantity %>
     <%= f.number_field :quantity %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>

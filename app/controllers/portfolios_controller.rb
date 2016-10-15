@@ -11,6 +11,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/1
   # GET /portfolios/1.json
   def show
+    @position = Position.new
   end
 
   # GET /portfolios/new
@@ -25,7 +26,7 @@ class PortfoliosController < ApplicationController
   # POST /portfolios
   # POST /portfolios.json
   def create
-    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio = Portfolio.new(portfolio_params.merge! user_id: current_user.id)
 
     respond_to do |format|
       if @portfolio.save

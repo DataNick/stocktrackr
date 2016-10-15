@@ -1,6 +1,11 @@
 class PositionsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_portfolio
+
+  def new
+    @position = Position.new
+  end
+
   def create
     @position = @portfolio.positions.build(position_params)
     respond_to do |format|
@@ -15,12 +20,13 @@ class PositionsController < ApplicationController
     end
   end
 
-  def new
-    @position = Position.new
-  end
-
   def index
     @positions = Position.all
+  end
+
+  def show
+    @position = @portfolio.positions.find(params[:id])
+    @movement = Movement.new
   end
 
   def destroy

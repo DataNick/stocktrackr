@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: one
+  quantity: 1
+  price: 9.99
+  date: 2016-10-14 21:04:02
+  trade: MyString
+
+two:
+  position: two
+  quantity: 1
+  price: 9.99
+  date: 2016-10-14 21:04:02
+  trade: MyString

@@ -1,0 +1,13 @@
+<%= form_for [@portfolio, @position] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+    <%= f.label :ticker %>
+    <%= f.text_field :ticker %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+<% end %>

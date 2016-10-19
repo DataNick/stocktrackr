@@ -7,15 +7,15 @@
 
   <div class="field">
     <%= f.label :ticker %>
-    <%= f.text_field :ticker %>
+    <%= f.text_field :ticker, class: 'form-control' %>
   </div>
 
   <div class = "field">
     <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :quantity, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

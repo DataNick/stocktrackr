@@ -1,0 +1,10 @@
+<%= form_for [@portfolio, @position, @movement], remote: true do |f| %>
+  <%= render partial: 'movements/movement_error_messages' %>
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

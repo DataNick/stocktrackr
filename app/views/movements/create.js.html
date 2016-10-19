@@ -1,0 +1,6 @@
+<% if @movement.errors.any? %>
+  $('#movement-errors').html("<%= j(render partial: 'movements/movement_error_messages') %>")
+<% else %>
+  $("#movements").append("<%= escape_javascript(render @movement) %>");
+  $('#movement_quantity').val('');
+<% end %>

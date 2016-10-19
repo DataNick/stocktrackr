@@ -9,7 +9,12 @@ class Position < ApplicationRecord
 
   def buy(quantity)
     ticker.upcase!
-    movements.build(date: DateTime.now, quantity: quantity, price: quote.last_trade_price, trade: 'buy')
+    movements.build(date: DateTime.strptime(quote.last_trade_date, '%m/%d/%Y'), quantity: quantity, price: quote.last_trade_price, trade: 'buy')
+    save
+  end
+
+  def sell(quantity)
+    movements.build(date: DateTime.strptime(quote.last_trade_date, '%m/%d/%Y'), quantity: quantity, price: quote.last_trade_price, trade: 'sell')
     save
   end
 

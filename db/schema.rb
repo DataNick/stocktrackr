@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015010402) do
+ActiveRecord::Schema.define(version: 20161017181130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161015010402) do
     t.integer  "portfolio_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.decimal  "price"
     t.index ["portfolio_id"], name: "index_positions_on_portfolio_id", using: :btree
   end
 

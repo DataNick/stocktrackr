@@ -12,6 +12,13 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/1.json
   def show
     @position = Position.new
+    @movement = Movement.new
+    @positions = @portfolio.positions
+    respond_to do |format|
+      format.html
+      format.json { render json: @movements}
+      format.js
+    end
   end
 
   # GET /portfolios/new

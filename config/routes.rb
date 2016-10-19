@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :portfolios do
-    resources :positions
+    resources :positions do
+      resources :movements do
+        collection do
+          post 'sell'
+        end
+      end
+    end
   end
 
-  resources :positions do
-    resources :movements
-  end
 
   get "*path" => redirect("/")
 

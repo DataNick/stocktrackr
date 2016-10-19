@@ -3,7 +3,31 @@
   <%= @portfolio.name %>
 </p>
 
+<%= content_tag :canvas, "", id: "positions_chart", width: "300", height: "300", data: {positions: @positions } %>
+
+
+<h1>Positions</h1>
+<div class = 'table'>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Stock</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<tbody id = "positions">
+  <%= render @positions %>
+</tbody>
+</table>
+</div>
+
+<h3>New Position</h3>
+
 <%= render 'positions/form' %>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
+
+

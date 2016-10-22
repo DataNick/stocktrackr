@@ -12,13 +12,19 @@ class Position < ApplicationRecord
 
   def buy(quantity)
     if get_quote.valid?
-      movements.build(date: DateTime.strptime(get_quote.last_trade_date, '%m/%d/%Y'), quantity: quantity, price: get_quote.last_trade_price, trade: 'buy')
+      movements.build(date: DateTime.strptime(get_quote.last_trade_date, '%m/%d/%Y'),
+                      quantity: quantity,
+                      price: get_quote.last_trade_price,
+                      trade: 'buy')
     end
     save
   end
 
   def sell(quantity)
-    movements.build(date: DateTime.strptime(get_quote.last_trade_date, '%m/%d/%Y'), quantity: quantity, price: get_quote.last_trade_price, trade: 'sell')
+    movements.build(date: DateTime.strptime(get_quote.last_trade_date, '%m/%d/%Y'),
+                    quantity: quantity,
+                    price: get_quote.last_trade_price,
+                    trade: 'sell')
     save
   end
 

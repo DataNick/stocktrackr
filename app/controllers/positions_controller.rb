@@ -29,9 +29,6 @@ class PositionsController < ApplicationController
     @movement = Movement.new
   end
 
-  def destroy
-  end
-
   private
 
     def load_portfolio

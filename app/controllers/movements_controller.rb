@@ -45,9 +45,6 @@ class MovementsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def new
     @movement = Movement.new
   end

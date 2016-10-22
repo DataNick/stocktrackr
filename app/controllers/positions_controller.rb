@@ -13,7 +13,7 @@ class PositionsController < ApplicationController
         format.html { redirect_to @portfolio, notice: 'Position was successfully created.' }
         format.json { render :show, status: :created, location: @position }
       else
-        format.html { render 'portfolios/show' }
+        format.html { render 'portfolios/show', alert: 'Position could not be made.' }
         format.json { render json: @position.errors, status: :unprocessable_entity }
         format.js
       end

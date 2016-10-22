@@ -3,9 +3,8 @@ class MovementsController < ApplicationController
 
   def create
     @movement = @position.movements.build(movement_params)
-    # @movement.position_id = @position.id
+
     @movement.update_price_and_date
-    # @movement.date = DateTime.now
     @movement.trade ='buy'
 
     respond_to do |format|
@@ -31,9 +30,6 @@ class MovementsController < ApplicationController
 
   def sell
     @movement = @position.movements.build(movement_params)
-    # @movement.position_id = @position.id
-    # @movement.update_price
-    # @movement.date = DateTime.now
     @movement.trade ='sell'
 
     respond_to do |format|

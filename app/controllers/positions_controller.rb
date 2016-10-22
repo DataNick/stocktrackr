@@ -39,6 +39,6 @@ class PositionsController < ApplicationController
     end
 
     def position_params
-      params.require(:position).permit(:ticker, :name, :quantity, :portfolio_id)
+      params.require(:position).permit(:ticker, :name, :price, :quantity, :portfolio_id)
     end
 end

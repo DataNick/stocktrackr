@@ -60,6 +60,7 @@ class MovementsController < ApplicationController
 
     def load_portfolio_and_position
       @portfolio = Portfolio.find(params[:portfolio_id])
+      @positions =  @portfolio.positions
       @position = @portfolio.positions.find(params[:position_id])
     end
 end

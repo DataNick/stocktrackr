@@ -11,7 +11,6 @@ class Position < ApplicationRecord
   before_create :upcase_ticker
 
   def buy(quantity)
-    binding.pry
     if get_quote['name'] && get_quote['name'] != 'N/A'
       movements.build(date: DateTime.strptime(get_quote.last_trade_date, '%m/%d/%Y'),
                       quantity: quantity,

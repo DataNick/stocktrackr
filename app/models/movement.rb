@@ -1,6 +1,9 @@
 class Movement < ApplicationRecord
   belongs_to :position
-  validates :quantity, presence: true
+  validates :quantity,
+            presence: true,
+            numericality: true
+
 
   def update_price_and_date
     ticker = self.position['ticker']

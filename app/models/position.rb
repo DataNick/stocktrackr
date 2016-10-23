@@ -3,9 +3,13 @@ class Position < ApplicationRecord
   has_many :movements, dependent: :destroy
 
   validates_uniqueness_of :ticker, scope: :portfolio_id
-  validates_presence_of :ticker, :message => 'Invalid ticker.'
-  validates_presence_of :quantity, :message => 'Must input a number.'
-  validates_presence_of :name, :message => "Search for name revealed no match."
+  validates :ticker,
+            presence: { message: "must be given" }
+  validates :quantity,
+            numericality: true,
+            presence: { message: 'must be given.' }
+  validates :name,
+            presence: { message: "could not be found." }
 
   before_validation :set_name
   before_validation :set_price

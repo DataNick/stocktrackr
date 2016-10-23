@@ -27,6 +27,11 @@ class PositionsController < ApplicationController
   def show
     @position = @portfolio.positions.find(params[:id])
     @movement = Movement.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @position }
+      format.js
+    end
   end
 
   private

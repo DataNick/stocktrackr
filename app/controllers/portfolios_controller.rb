@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
     @positions = @portfolio.positions
     respond_to do |format|
       format.html
-      format.json { render json: @movements}
+      format.json { render json: @positions}
       format.js
     end
   end

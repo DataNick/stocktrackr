@@ -7,4 +7,8 @@ class Portfolio < ApplicationRecord
   validates :name,
             presence: { message: "must be given." }
 
+  def portfolio_value
+    amount = positions.collect{|position| position.quanity * position.value }.sum.round(2)
+  end
+
 end

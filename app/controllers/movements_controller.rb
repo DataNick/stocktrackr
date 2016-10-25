@@ -7,7 +7,7 @@ class MovementsController < ApplicationController
     @movement = @position.movements.build(movement_params)
 
     @movement.update_price_and_date
-    @movement.trade ='buy'
+    @movement.trade = 'buy'
 
     respond_to do |format|
       if @movement.save
@@ -31,12 +31,10 @@ class MovementsController < ApplicationController
   end
 
   def sell
-    @movement = @position.movements.build(movement_params)
-    @movement.trade ='sell'
-
     respond_to do |format|
       if @position.sell(params[:movement][:quantity].to_i)
-        @position.update_attribute(:quantity, (@position.quantity - @movement.quantity))
+        # binding.pry
+        # @position.update_attribute(:quantity, (@position.quantity - @movement.quantity))
         format.html { redirect_to @portfolio, notice: "You sold #{params[:movement][:quantity]} share(s)." }
         format.json { render :show, status: :created, location: @position }
       else

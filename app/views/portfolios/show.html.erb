@@ -3,7 +3,9 @@
   <%= @portfolio.name %>
 </p>
 
-<%= content_tag :canvas, "", id: "positions_chart", width: "300", height: "300", data: {positions: @positions } %>
+<%= content_tag :canvas, "", id: "positions_chart", width: "300", height: "300", data: {positions: @positions } do %>
+  Loading chart...
+<% end %>
 
 
 <h1>Positions</h1>
@@ -29,5 +31,7 @@
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
+
+
 
 

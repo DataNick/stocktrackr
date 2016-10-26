@@ -1,6 +1,7 @@
 class Portfolio < ApplicationRecord
   has_many :positions, dependent: :destroy
   has_many :movements, through: :positions
+  has_many :valuations
 
   belongs_to :user
 

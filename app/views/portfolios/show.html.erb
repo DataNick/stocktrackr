@@ -7,6 +7,7 @@
   Loading chart...
 <% end %>
 
+<%= pie_chart @portfolio.positions.group(:ticker, :quantity).count %>
 
 <h1>Positions</h1>
 <div class = 'table'>

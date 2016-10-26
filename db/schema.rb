@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017181130) do
+ActiveRecord::Schema.define(version: 20161026180529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,16 @@ ActiveRecord::Schema.define(version: 20161017181130) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "valuations", force: :cascade do |t|
+    t.integer  "portfolio_id"
+    t.decimal  "amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["portfolio_id"], name: "index_valuations_on_portfolio_id", using: :btree
+  end
+
   add_foreign_key "movements", "positions"
   add_foreign_key "portfolios", "users"
   add_foreign_key "positions", "portfolios"
+  add_foreign_key "valuations", "portfolios"
 end

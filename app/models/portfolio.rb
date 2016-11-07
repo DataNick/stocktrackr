@@ -9,7 +9,14 @@ class Portfolio < ApplicationRecord
             presence: { message: "must be given." }
 
   def portfolio_value
-    amount = positions.collect{|position| position.quanity * position.value }.sum.round(2)
+    value = positions.collect{|position| position.quantity * position.price }.sum.round(2)
+    update_attribute(:amount, value)
+    amount
+  end
+
+  def store_value
+    valuations.build(amount: amount)
+    save
   end
 
 end

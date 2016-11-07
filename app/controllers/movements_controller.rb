@@ -33,8 +33,6 @@ class MovementsController < ApplicationController
   def sell
     respond_to do |format|
       if @position.sell(params[:movement][:quantity].to_i)
-        # binding.pry
-        # @position.update_attribute(:quantity, (@position.quantity - @movement.quantity))
         format.html { redirect_to @portfolio, notice: "You sold #{params[:movement][:quantity]} share(s)." }
         format.json { render :show, status: :created, location: @position }
       else

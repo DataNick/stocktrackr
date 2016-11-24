@@ -27,8 +27,8 @@ $(document).on("turbolinks:load", function () {
     datasets: [
       {
         backgroundColor: function() {
-          let bgcolors = [];
-          for (let i=0; i < tickers.length; ++i) bgcolors.push(colors[i % colors.length]);
+          var bgcolors = [];
+          for (var i=0; i < tickers.length; ++i) bgcolors.push(colors[i % colors.length]);
           return bgcolors;
           }(),
         borderColor: "rgba(220,220,220,1)",

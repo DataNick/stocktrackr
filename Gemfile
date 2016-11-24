@@ -15,6 +15,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'yahoo-finance'
 gem "chartkick"
+
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'
 gem 'rails_12factor', group: :production
@@ -22,7 +23,7 @@ gem 'whenever', '~> 0.9.4', :require => false
 gem 'autoprefixer-rails'
 gem 'bourbon'
 gem 'neat'
-gem 'bitters'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri

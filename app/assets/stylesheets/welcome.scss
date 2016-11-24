@@ -7,14 +7,14 @@
   $device-screen-width: 14em;
   $device-screen-height: 25em;
   $device-background: darken(gray, 40%);
-  $device-backside-background: darken($device-background, 10%);
+  $device-backside-background: lighten($device-background, 10%);
   $device-text-color: white;
   $device-background-top: #162C4C;
   $device-background-bottom: #0A120D;
   $gradient-angle: 10deg;
   $device-image: "https:
 //raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png";
-  $device-screen-image: "http://cdn2.iphoneness.com/wp-content/uploads/2014/11/10/stock.jpg";
+  $device-screen-image: "http://cdn1.iphoneness.com/wp-content/uploads/2014/11/10/stock-signals.jpg";
 
   background: url($device-image),
               linear-gradient($gradient-angle, $device-background-bottom, $device-background-top),
@@ -89,3 +89,4 @@
     }
   }
 }
+

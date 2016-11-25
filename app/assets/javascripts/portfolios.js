@@ -41,12 +41,10 @@ $(document).on("turbolinks:load", function () {
       type: 'doughnut',
       data: pieData,
       options: {
-          responsive: true
+          responsive: true,
+          maintainAspectRatio: false
       }
   });
-
-   ctx.canvas.width = auto;
- ctx.canvas.height = auto;
 
   console.log(chartInstance);
   console.log(pieData);

@@ -32,7 +32,6 @@ class Position < ApplicationRecord
                     trade: 'sell')
     @movement.update_price_and_date
     self.update_attribute(:quantity, (self.quantity - quantity))
-    binding.pry
     save
 
   end

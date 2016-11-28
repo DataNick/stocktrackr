@@ -10,11 +10,11 @@ class PortfoliosController < ApplicationController
     @position = Position.new
     @movement = Movement.new
     @positions = @portfolio.positions
-    respond_to do |format|
-      format.html
-      format.json { render json: @positions}
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @positions}
+    #   format.js
+    # end
   end
 
   def new

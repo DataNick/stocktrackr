@@ -1,0 +1,24 @@
+<h1>Search Yahoo Finance</h1>
+
+<!-- <div id="api-search">
+  <input type="text" name="fname", id="ticker", placeholder="Stock symbol">
+  <input type="submit" value="Submit">
+</div>
+ -->
+<%= form_tag('/search_results', method: "get") do %>
+  <%= label_tag(:q, "Search for ticker (i.e. AAPL)") %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<!-- <%= @stock %>
+ -->
+
+
+
+<%= content_tag :canvas, "", id: "stock_history_chart", height: "180", data: {stock: @stock } %>
+
+
+<div id="stock-box"></div>
+
+<div class="search-results"></div>

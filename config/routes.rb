@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'welcome#index'
-
+  get '/search' => 'pages#show'
+  get '/search_results' => 'pages#search'
   resources :portfolios do
     resources :positions do
       resources :movements do

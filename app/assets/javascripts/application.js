@@ -16,5 +16,6 @@
 //= require chartkick
 //= require portfolios.js
 //= require positions.js
+//= require pages.js
 //= require turbolinks
 //= require_tree .

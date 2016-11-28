@@ -7,14 +7,14 @@ $(document).on("turbolinks:load", function () {
     quantities.push(element['quantity']);
   });
 
-  var colors =[ "#FFCE56",
+  var colors =[ "#3498db",
                 "#FFA75D",
-                "#46BFBF",
+                "#27ae60",
                 "#5975CB",
                 "#FF5D5D",
                 "#FFCC5D",
                 "#52DF52",
-                'black'
+                '#34495e'
 ];
 
   var tickers = [];
@@ -41,7 +41,7 @@ $(document).on("turbolinks:load", function () {
       type: 'doughnut',
       data: pieData,
       options: {
-          responsive: true,
+          responsive: false,
           maintainAspectRatio: false
       }
   });
@@ -53,6 +53,8 @@ $(document).on("turbolinks:load", function () {
   // console.log(tickers)
 
 });
+
+
 
 
 // $(document).ready(function() {
@@ -80,8 +82,6 @@ $(document).on("turbolinks:load", function () {
 //   });
 
 // });
-
-
 
 
 

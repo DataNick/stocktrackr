@@ -6,24 +6,23 @@ $(function () {
   $("#stock_history_chart").data('stock').forEach(function(element){
     dates.push(element['table']['trade_date']);
   });
+  // var new_date = []
   dates = dates.reverse()
-
+  // dates = dates.forEach(function(el){
+  //   new_date.push(new Date(el).toLocaleDateString())
+  // });
+  var new_price = [];
   var prices = [];
   $("#stock_history_chart").data('stock').forEach(function(element){
     prices.push(element['table']['close']);
   });
+
   prices = prices.reverse()
 
-  var lineData = {
-    labels: dates,
-    datasets: [
-      {
-        label: 'AAPL',
-        data: prices,
-        backgroundColor: "rgba(220,220,220,1)"
-    }
-  ]
-  }
+  // prices.forEach(function(el){
+  //   new_price.push(el.round(2))
+  // })
+  // console.log(prices[0].toFixed(2))
 
   var chartInstance = new Chart(ctx, {
       type: 'line',

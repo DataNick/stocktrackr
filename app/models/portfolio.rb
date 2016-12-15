@@ -2,6 +2,7 @@ class Portfolio < ApplicationRecord
   has_many :positions, dependent: :destroy
   has_many :movements, through: :positions
   has_many :valuations
+  before_save :default_amount
 
   belongs_to :user
 
@@ -14,9 +15,14 @@ class Portfolio < ApplicationRecord
     amount
   end
 
-  def store_value
-    valuations.build(amount: amount)
+  def create_valuation
+    valuations.build(:amount, self.amount)
     save
   end
 
+  private
+
+    def default_amount
+      self.amount ||= 0.0
+    end
 end

@@ -20,9 +20,34 @@ class Portfolio < ApplicationRecord
     save
   end
 
+  def new_price_data
+    price_array = []
+    positions.each do |pos|
+      price = YAHOO_CLIENT.quotes([pos.ticker], [:last_trade_price]).first
+      price = price['last_trade_price'].to_f
+      price = price * pos.quantity
+      price_array << price
+    end
+    price_array
+  end
+
+  def calculate_amount
+    price ||= new_price_data.inject(&:+)
+    price.round(2)
+  end
+
+  def update_portfolio_amount
+    update_attribute(amount: calculate_amount)
+  end
+
   private
 
     def default_amount
       self.amount ||= 0.0
     end
+
+    def ticker_info
+      positions.pluck(:ticker)
+    end
+
 end

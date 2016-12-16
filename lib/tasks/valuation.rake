@@ -1,9 +1,9 @@
 namespace :valuation do
 
-  desc "Calculate current portfolio amount"
-  task calculate: :environment do
+  desc "Retrieve real-time price data"
+  task update_price: :environment do
     Portfolio.all.each do |portfolio|
-      portfolio.portfolio_value
+      portfolio.calculate_amount
     end
   end
 

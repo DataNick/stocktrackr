@@ -2,7 +2,7 @@ class Portfolio < ApplicationRecord
   has_many :positions, dependent: :destroy
   has_many :movements, through: :positions
   has_many :valuations
-  before_save :default_amount
+  before_create :default_amount
 
   belongs_to :user
 
@@ -32,22 +32,18 @@ class Portfolio < ApplicationRecord
   end
 
   def calculate_amount
-    price ||= new_price_data.inject(&:+)
-    price.round(2)
+    price = self.new_price_data.inject(&:+)
+    price
   end
 
   def update_portfolio_amount
-    update_attribute(amount: calculate_amount)
+    update_attribute(:amount, self.calculate_amount)
   end
 
   private
 
     def default_amount
-      self.amount ||= 0.0
-    end
-
-    def ticker_info
-      positions.pluck(:ticker)
+      self.amount = 0.0
     end
 
 end

@@ -16,7 +16,7 @@ class Portfolio < ApplicationRecord
   end
 
   def create_valuation
-    valuations.build(:amount, self.amount)
+    valuations.build(amount: self.amount)
     save
   end
 
@@ -37,7 +37,7 @@ class Portfolio < ApplicationRecord
   end
 
   def update_portfolio_amount
-    update_attribute(:amount, self.calculate_amount)
+    update_attribute(:amount, self.calculate_amount.round(2))
   end
 
   private

@@ -18,3 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.day, :at => '11:59 pm' do
+  rake "valuation:update_price", :environment => 'development'
+end
+
+every 1.day, :at => '12:00 am' do
+  rake "valuation:snapshot", :environment => 'development'
+end

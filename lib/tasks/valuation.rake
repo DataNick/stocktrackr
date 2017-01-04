@@ -3,7 +3,7 @@ namespace :valuation do
   desc "Retrieve real-time price data"
   task update_price: :environment do
     Portfolio.all.each do |portfolio|
-      portfolio.calculate_amount
+      portfolio.update_portfolio_amount
     end
   end
 
@@ -15,3 +15,4 @@ namespace :valuation do
   end
 
 end
+

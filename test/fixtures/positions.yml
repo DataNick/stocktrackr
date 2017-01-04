@@ -3,11 +3,13 @@
 one:
   ticker: MyString
   name: MyString
-  quantity: 1
+  quantity: 2
+  price: 3
   portfolio: one
 
 two:
   ticker: MyString
   name: MyString
-  quantity: 1
+  quantity: 2
+  price: 10.01
   portfolio: two

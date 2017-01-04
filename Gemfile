@@ -28,7 +28,9 @@ gem 'neat'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  gem 'awesome_print', '~> 1.7'
   gem "better_errors"
+  gem 'vcr', '~> 3.0', '>= 3.0.3'
 end
 
 group :development do

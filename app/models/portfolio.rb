@@ -18,15 +18,20 @@ class Portfolio < ApplicationRecord
   def create_valuation
     valuations.build(amount: self.amount)
     save
+    amount
   end
 
   def new_price_data
     price_array = []
-    positions.each do |pos|
-      price = YAHOO_CLIENT.quotes([pos.ticker], [:last_trade_price]).first
-      price = price['last_trade_price'].to_f
-      price = price * pos.quantity
-      price_array << price
+    if !positions.empty?
+      positions.each do |pos|
+        price = YAHOO_CLIENT.quotes([pos.ticker], [:last_trade_price]).first
+        price = price['last_trade_price'].to_f
+        price = price * pos.quantity
+        price_array << price
+      end
+    else
+      price_array << 0
     end
     price_array
   end

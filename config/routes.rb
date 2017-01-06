@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/search' => 'pages#show'
   get '/search_results' => 'pages#search'
+  get '/about' => 'pages#about'
   resources :portfolios do
     resources :positions do
       resources :movements do

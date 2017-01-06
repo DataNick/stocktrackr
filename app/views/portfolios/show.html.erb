@@ -1,12 +1,16 @@
-<p>
+<h2>
   <strong>Name:</strong>
   <%= @portfolio.name %>
-</p>
+</h2>
 <div class="container">
-<%= content_tag :canvas, "", id: "positions_chart", width: "500px", height: "500px", data: {positions: @positions } %>
+  <%= content_tag :canvas, "", id: "positions_chart", width: "500px", height: "500px", data: {positions: @positions } %>
+</div>
+<div class="container">
+  <%= content_tag :canvas, "", id: "valuations_chart", data: {valuations: @valuations } %>
+
 </div>
 
-<!-- <%= pie_chart @portfolio.positions.group(:ticker, :quantity).count %> -->
+
 
 
 <h1>Positions</h1>

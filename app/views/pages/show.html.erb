@@ -1,19 +1,11 @@
 <h1>Search Historical Prices on Yahoo Finance</h1>
 
-<!-- <div id="api-search">
-  <input type="text" name="fname", id="ticker", placeholder="Stock symbol">
-  <input type="submit" value="Submit">
-</div>
- -->
+
 <%= form_tag('/search_results', method: "get") do %>
   <%= label_tag(:q, "Look up historical prices for stocks") %>
   <%= text_field_tag :q, params[:q], placeholder: "i.e. TSLA" %>
   <%= submit_tag("Search") %>
 <% end %>
-
-<!-- <%= @stock %>
- -->
-
 
 
 <%= content_tag :canvas, "", id: "stock_history_chart", height: "180", data: {stock: @stock } %>

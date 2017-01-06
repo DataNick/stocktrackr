@@ -15,7 +15,9 @@
 //= require Chart.bundle
 //= require chartkick
 //= require portfolios.js
+//= require valuations.js
 //= require positions.js
+//= require about.js
 //= require pages.js
 //= require turbolinks
 //= require_tree .

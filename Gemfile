@@ -31,6 +31,8 @@ group :development, :test do
   gem 'awesome_print', '~> 1.7'
   gem "better_errors"
   gem 'vcr', '~> 3.0', '>= 3.0.3'
+  gem 'webmock', '~> 2.1'
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 group :development do

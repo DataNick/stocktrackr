@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PortfolioTest < ActiveSupport::TestCase
-  include Devise::Test::IntegrationHelpers
+
   setup do
     @user = users(:nicholas)
     sign_in @user
@@ -21,5 +21,11 @@ class PortfolioTest < ActiveSupport::TestCase
     @portfolio.portfolio_value #grab values of positions and number of shares for each position
     assert_equal 6, @portfolio.create_valuation
   end
+
+  # test "retrieves latest price data" do
+  #   VCR.use_cassette('twitter') do
+  #     @portfolio.new_price_data
+  #   end
+  # end
 
 end

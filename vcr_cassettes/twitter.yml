@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://download.finance.yahoo.com/d/quotes.csv?f=l1&s=TWTR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 05 Jan 2017 00:34:43 GMT
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private, no-cache, no-store
+      Content-Length:
+      - '6'
+      Content-Type:
+      - application/octet-stream
+      Age:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=0
+      Via:
+      - http/1.1 media-router-api13.prod.media.ne1.yahoo.com (ApacheTrafficServer
+        [cMsSf ]), https/1.1 e29.ycpi.cha.yahoo.com (ApacheTrafficServer [cMsSf ])
+      Server:
+      - ATS
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '16.86
+
+'
+    http_version: 
+  recorded_at: Thu, 05 Jan 2017 00:34:43 GMT
+recorded_with: VCR 3.0.3

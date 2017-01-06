@@ -10,6 +10,7 @@ class PortfoliosController < ApplicationController
     @position = Position.new
     @movement = Movement.new
     @positions = @portfolio.positions
+    @valuations = @portfolio.valuations
     # respond_to do |format|
     #   format.html
     #   format.json { render json: @positions}

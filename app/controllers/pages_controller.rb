@@ -12,7 +12,9 @@ class PagesController < ApplicationController
       format.json { render json: @stock}
       format.js
     end
+  end
 
+  def about
   end
 
 end

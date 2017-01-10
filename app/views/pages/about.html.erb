@@ -1,14 +1,14 @@
 <h1>Sample Portfolio Data</h1>
 <p>When a user signs in a creates their portfolio, growth is slow and favours the patient</p>
-<p>This page shows the results of sample data over a month</p>
+<p>This is a sample page of what an average portfolio page would look like. The share of stocks are presented in a doughnut graph with the value of the portfolio being tracked over time.</p>
 
 
 <div class="container">
   <canvas id="positions_sample_chart"></canvas>
 </div>
-<div class="container">
+
   <canvas id="valuations_sample_chart"></canvas>
-</div>
+
 
 <script>
 
@@ -45,6 +45,9 @@
 
 
       var valuation_dates = ["2017-01-01T01:12:04.238-05:00","2017-01-01T01:40:03.856-05:00","2017-01-03T18:57:47.777-05:00", "2017-01-04T01:40:04.556-05:00", "2017-01-04T08:16:12.009-05:00", "2017-01-04T16:11:20.868-05:00", "2016-12-31T00:00:03.344-05:00", "2017-01-01T01:06:02.897-05:00", "2017-01-01T01:03:03.156-05:00"];
+      valuation_dates.map(function(v){
+        console.log(Date.parse(v));
+      })
       valuation_dates.sort();
 
       console.log(valuation_amounts);

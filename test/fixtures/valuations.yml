@@ -2,8 +2,8 @@
 
 one:
   portfolio: one
-  amount: 0
+  amount: 1
 
 two:
   portfolio: two
-  amount: 0
+  amount: 2

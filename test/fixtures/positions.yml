@@ -4,7 +4,7 @@ one:
   ticker: 'TWTR'
   name: 'Twitter'
   quantity: 2
-  price: 3
+  price: 3.01
   portfolio: one
 
 two:

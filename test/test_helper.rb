@@ -1,6 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'capybara/rails'
 require 'capybara'
 require 'capybara/dsl'
 require 'vcr'
@@ -13,7 +14,7 @@ class ActiveSupport::TestCase
   VCR.configure do |c|
     c.hook_into :webmock
     c.cassette_library_dir = 'vcr_cassettes'
-    c.default_cassette_options = { :record => :new_episodes }
+    c.default_cassette_options = { :record => :once }
   end
 end
 

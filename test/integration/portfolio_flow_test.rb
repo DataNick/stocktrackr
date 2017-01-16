@@ -12,8 +12,8 @@ class PortfolioFlowTest < ActionDispatch::IntegrationTest
   test "signed in user can visit portfolio index page" do
     @user = users(:nicholas)
     sign_in @user
-    get "/portfolios"
-    assert_select "h1", "Portfolios"
+    visit ("/portfolios")
+    assert page.has_content?('Portfolios')
   end
 
   test "show portfolio page" do

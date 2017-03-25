@@ -13,6 +13,12 @@ class Stock
   private
 
     def get_historical_quote
-      YAHOO_CLIENT.historical_quotes(@ticker, { start_date: Time::now-(60*60*24*365), end_date: Time::now })
+      begin
+        YAHOO_CLIENT.historical_quotes(@ticker, { start_date: Time::now-(60*60*24*365), end_date: Time::now })
+      rescue OpenURI::HTTPError => error
+        response = error.io
+        response.status
+        response.string
+      end
     end
 end
